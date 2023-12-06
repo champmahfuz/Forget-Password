@@ -17,7 +17,7 @@ const ForgotPassword = () => {
     const [message, setMessage] = useState("");
 
     const userValid = async () => {
-        const res = await fetch(`/forgotpassword/${id}/${token}`, {
+        const res = await fetch(`/${id}/${token}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -26,7 +26,7 @@ const ForgotPassword = () => {
 
         const data = await res.json()
 
-        if (data.status == 201) {
+        if (data.status === 201) {
             console.log("user valid")
         } else {
             history("*")
@@ -60,11 +60,11 @@ const ForgotPassword = () => {
 
             const data = await res.json()
 
-            if (data.status == 201) {
+            if (data.status === 201) {
                 setPassword("")
                 setMessage(true)
             } else {
-                toast.error("! Token Expired generate new LInk",{
+                toast.error("! Token Expired generate new LInk", {
                     position: "top-center"
                 })
             }

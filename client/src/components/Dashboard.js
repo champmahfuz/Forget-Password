@@ -1,4 +1,4 @@
-import React, { useContext, useEffect ,useState} from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { LoginContext } from './ContextProvider/Context';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -26,7 +26,7 @@ const Dashboard = () => {
 
         const data = await res.json();
 
-        if (data.status == 401 || !data) {
+        if (data.status === 401 || !data) {
             history("*");
         } else {
             console.log("user verify");

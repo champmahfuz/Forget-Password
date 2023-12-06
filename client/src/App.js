@@ -34,7 +34,7 @@ function App() {
 
     const data = await res.json();
 
-    if (data.status == 401 || !data) {
+    if (data.status === 401 || !data) {
       console.log("user not valid");
     } else {
       console.log("user verify");
@@ -44,10 +44,10 @@ function App() {
   }
 
   useEffect(() => {
-    setTimeout(()=>{
+    setTimeout(() => {
       DashboardValid();
       setData(true)
-    },2000)
+    }, 2000)
 
   }, [])
 
